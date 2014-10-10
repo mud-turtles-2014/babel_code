@@ -1,6 +1,7 @@
 class ReplySnippet < ActiveRecord::Base
 	belongs_to :user
+  belongs_to :original_snippet
 	has_one :language
-	belongs_to :original_snippet
+  has_many :votes
 end
 
