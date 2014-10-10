@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class OriginalSnippetsController < ActionController::Base
 
   def index
     @original_snippets = OriginalSnippet.all
