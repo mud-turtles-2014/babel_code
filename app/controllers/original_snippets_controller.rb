@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
   def index
+    @original_snippets = OriginalSnippet.all
   end
 
   def show
@@ -13,6 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def edit
+
   end
 
   def update
