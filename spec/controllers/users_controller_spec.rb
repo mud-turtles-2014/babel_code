@@ -17,7 +17,7 @@ describe UsersController do
     context "with valid attributes" do
       it "saves the new user to the database" do
         expect {
-          post :create, user: {username: "polly123", email: "polly@gmail.com", password: "password", passwrd: "password"}
+          post :create, user: {username: "polly123", email: "polly@gmail.com", password: "password", password: "password"}
         }.to change(User, :count).by(1)
       end
       it "redirects to the login page"
