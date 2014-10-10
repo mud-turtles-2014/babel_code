@@ -8,3 +8,5 @@
 User.create(username: "aferragano", email: "aferragano@gmail.com", password:"password", password_confirmation:"password")
 User.create(username: "katherine", email: "katherine@gmail.com", password:"password", password_confirmation:"password")
 User.create(username: "steph", email: "steph@gmail.com", password:"password", password_confirmation:"password")
+
+Language.create(language: "Ruby")

@@ -8,12 +8,15 @@ describe OriginalSnippetsController do
       expect(response).to render_template :index
     end
     it "populates an array of original snippets" do
-      original_snippet = build(:original_snippet)
-      expect(assigns(:original_snippet)).to eq original_snippet
+      get :index
+      original_snippet = FactoryGirl.create(:original_snippet)
+      expect(assigns(:original_snippets)).to match_array(@original_snippets)
     end
   end
 
   describe 'GET #show' do
+    it "assigns the requested original snippet to @snippet"
+    it "renders the :show template"
   end
 
   describe 'GET #new' do

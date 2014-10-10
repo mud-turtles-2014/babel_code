@@ -2,9 +2,16 @@ require 'rails_helper'
 
 describe OriginalSnippetsController do
 
+
   describe 'GET #index' do
-    it "populates an array of original snippets"
-    it "renders the :index template"
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
+    it "populates an array of original snippets" do
+      original_snippet = create(:original_snippet)
+      expect(assigns(:original_snippet)).to eq original_snippet
+    end
   end
 
   describe 'GET #show' do
