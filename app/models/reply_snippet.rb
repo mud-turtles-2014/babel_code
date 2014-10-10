@@ -3,3 +3,4 @@ class ReplySnippet < ActiveRecord::Base
 	has_one :language
 	belongs_to :original_snippet
 end
+

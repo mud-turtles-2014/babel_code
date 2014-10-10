@@ -4,3 +4,4 @@ class OriginalSnippet < ActiveRecord::Base
 	has_many :reply_snippets
 	validates :title, :content, presence: true
 end
+
