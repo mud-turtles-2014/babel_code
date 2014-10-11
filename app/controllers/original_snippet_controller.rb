@@ -6,7 +6,7 @@ class OriginalSnippetController < ApplicationController
   end
 
   def create
-
+    @original_snippet = OriginalSnippet.new(original_snippet_params)
   end
 
   def edit
@@ -22,9 +22,9 @@ class OriginalSnippetController < ApplicationController
   end
 
   private
-
   def original_snippet_params
-    @original_snippet = OriginalSnippet.find(params[:id])
+    params.require(:original_snippet).permit( [:title, :description, :snippet, :lanuguage_id])
+    OriginalSnippet.find(params[:id])
   end
 
 end
