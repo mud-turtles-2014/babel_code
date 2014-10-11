@@ -4,18 +4,19 @@
   <title>BabelCode</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <h1><a href="/">Babel Code</a></h1>
-<nav>
+<nav><ul>
 <% if session[:id] %>
-	<a href="/original_snippets/new">New Code Snippet</a>
-	<a href="/original_snippets">Code Snippets</a>
-  <a href="/logout">Log Out</a>
+	<li><a href="/original_snippets/new">New Code Snippet</a></li>
+	<li><a href="/original_snippets">Code Snippets</a></li>
+  <li><a href="/logout">Log Out</a></li>
 <% else %>
-  <a href="/login">Login/Sign Up</a>
+  <li><a href="/login">Login/Sign Up</a></li>
 <% end %>
-</nav>
+</ul></nav>
 <body>
 
 <%= yield %>
