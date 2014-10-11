@@ -56,6 +56,8 @@ GEM
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.6)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     gh (0.13.2)
       addressable
       backports
@@ -184,6 +186,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   capybara
   coffee-rails (~> 4.0.0)
+  friendly_id (~> 5.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg

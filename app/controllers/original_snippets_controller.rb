@@ -22,7 +22,7 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def show
-    @original_snippet = OriginalSnippet.find(params[:id])
+    @original_snippet = OriginalSnippet.friendly.find(params[:id])
     @reply_snippets = @original_snippet.reply_snippets.all
     @reply_snippet = ReplySnippet.new
   end
