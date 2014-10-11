@@ -6,15 +6,21 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<h1><a href="/">Babel Code</a></h1>
+<nav>
 <% if session[:id] %>
+	<a href="/original_snippets/new">New Code Snippet</a>
+	<a href="/original_snippets">Code Snippets</a>
   <a href="/logout">Log Out</a>
 <% else %>
   <a href="/login">Login/Sign Up</a>
 <% end %>
+</nav>
+<body>
+
+<%= yield %>
+
+
 
 </body>
 </html>
