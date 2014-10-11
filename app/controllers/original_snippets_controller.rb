@@ -1,6 +1,14 @@
 class OriginalSnippetsController < ApplicationController
   before_filter :current_snippet, only: [:show, :update, :edit, :destroy]
 
+  def index
+    @recent = OriginalSnippet.all.order("created_at desc")
+    @js_entries = OriginalSnippet.all.where(language_id: 2).order("created_at desc")
+    @ruby_entries = OriginalSnippet.all.where(language_id: 1).order("created_at desc")
+  end
+
+  # test comment--git doesn't seem to be picking up my changes--test comment
+
   def new
     @original_snippet = OriginalSnippet.new
   end
