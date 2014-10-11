@@ -17,6 +17,6 @@
 
 <% @reply_snippets.each do |reply| %>
 <p><%= reply.description %></p>
-<p><%= reply.snippet %></p>
+<pre><code><%= reply.snippet %></code></pre>
 <p>Language: <%= reply.language.language %></p>
 <% end %>
