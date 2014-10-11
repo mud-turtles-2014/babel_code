@@ -1,4 +1,11 @@
 <h1><%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
 <p><%= @original_snippet.snippet %></p>
-<p>Language: <%= @language_name %></p>
+<p>Language: <%= @original_snippet.language.language %></p>
+
+<% @reply_snippets.each do |reply| %>
+<p><%= reply.description %></p>
+<p><%= reply.snippet %></p>
+<!-- <p>Language: <%= Language.find(reply.language_id).language %></p> -->
+<p>Language: <%= reply.language.language %></p>
+<% end %>

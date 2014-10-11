@@ -16,7 +16,6 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -24,7 +23,7 @@ class OriginalSnippetsController < ApplicationController
 
   def show
     @original_snippet = OriginalSnippet.find(params[:id])
-    @language_name = language_name(@original_snippet.language_id)
+    @reply_snippets = @original_snippet.reply_snippets.all
   end
 
   def destroy
@@ -35,7 +34,4 @@ class OriginalSnippetsController < ApplicationController
     params.require(:original_snippet).permit( [:title, :description, :snippet, :language_id])
   end
 
-  def language_name(language_id)
-    Language.find(language_id).language
-  end
 end
