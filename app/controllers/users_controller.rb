@@ -7,10 +7,16 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      redirect_to '/' #change this to login page
+      session[:id] = user.id
+      redirect_to root_path
     else
-      redirect_to new_user_path
+      flash[:signin_error] = user.errors.full_messages
+      redirect_to "/login"
     end
+  end
+
+  def destroy
+    user.destroy
   end
 
   private
