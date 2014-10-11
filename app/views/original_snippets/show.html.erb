@@ -5,6 +5,7 @@
 
 <% if @original_snippet.user == @current_user %>
   <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' %>
+  <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get %>
 <% end %>
 
 <%= form_for @reply_snippet do |f| %>
@@ -16,7 +17,11 @@
 <% end %>
 
 <% @reply_snippets.each do |reply| %>
-<p><%= reply.description %></p>
-<p><%= reply.snippet %></p>
-<p>Language: <%= reply.language.language %></p>
+  <p><%= reply.description %></p>
+  <p><%= reply.snippet %></p>
+  <p>Language: <%= reply.language.language %></p>
+  <% if reply.user == @current_user %>
+    <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
+    <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
+  <% end %>
 <% end %>

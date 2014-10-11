@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  $('.edit_reply').click(function() {
+    // add edit display here
+  })
+})
