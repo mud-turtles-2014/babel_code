@@ -10,6 +10,7 @@ class ReplySnippetsController < ApplicationController
     end
   end
 
+
   def destroy
     ReplySnippet.find(params[:id]).destroy
     redirect_to :back
