@@ -8,7 +8,7 @@
   <%= f.text_area :snippet %>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
-  <%= f.submit %>
+  <%= f.submit "Reply" %>
 <% end %>
 
 <% @reply_snippets.each do |reply| %>
