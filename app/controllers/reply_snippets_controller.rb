@@ -10,6 +10,12 @@ class ReplySnippetsController < ApplicationController
     end
   end
 
+
+  def destroy
+    ReplySnippet.find(params[:id]).destroy
+    redirect_to :back
+  end
+
   private
   def reply_snippet_params
     params.require(:reply_snippet).permit([:snippet, :description, :language_id, :original_snippet_id])

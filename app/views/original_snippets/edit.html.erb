@@ -1,5 +1,5 @@
 <%= form_for @original_snippet do |f|%>
-  <%= f.text_field :title %>
+  <h1><%= @original_snippet.title %></h1>
   <%= f.text_area :description %>
   <%= f.text_area :snippet %>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>

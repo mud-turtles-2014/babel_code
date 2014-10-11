@@ -19,6 +19,8 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def update
+    @original_snippet.update(original_snippet_params)
+    redirect_to original_snippet_path(@original_snippet)
   end
 
   def show

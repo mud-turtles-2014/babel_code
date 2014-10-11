@@ -4,7 +4,7 @@ class OriginalSnippet < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :language
-	has_many :reply_snippets
+	has_many :reply_snippets, :dependent => :destroy
 
 	validates :title, :snippet, presence: true
   validates :slug, uniqueness: true
@@ -15,4 +15,3 @@ class OriginalSnippet < ActiveRecord::Base
     self.slug = self.title.parameterize
   end
 end
-
