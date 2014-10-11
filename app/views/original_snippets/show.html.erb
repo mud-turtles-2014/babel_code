@@ -3,6 +3,10 @@
 <p><%= @original_snippet.snippet %></p>
 <p>Language: <%= @original_snippet.language.language %></p>
 
+<% if @original_snippet.user == @current_user %>
+  <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' %>
+<% end %>
+
 <%= form_for @reply_snippet do |f| %>
   <%= f.text_area :description %>
   <%= f.text_area :snippet %>
