@@ -3,5 +3,5 @@
   <%= f.text_area :description %>
   <%= f.text_area :snippet %>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
-  <%= f.submit %>
+  <%= f.submit "Create" %>
 <% end %>

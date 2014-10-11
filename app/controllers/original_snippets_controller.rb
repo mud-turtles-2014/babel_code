@@ -1,5 +1,5 @@
 class OriginalSnippetsController < ApplicationController
-  # before_filter :current_original_snippet, only: [:show, :update, :edit]
+  before_filter :current_snippet, only: [:show, :update, :edit, :destroy]
 
   def new
     @original_snippet = OriginalSnippet.new
@@ -22,12 +22,14 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def show
-    @original_snippet = OriginalSnippet.find(params[:id])
     @reply_snippets = @original_snippet.reply_snippets.all
     @reply_snippet = ReplySnippet.new
+    @current_user = current_user
   end
 
   def destroy
+    @original_snippet.destroy
+    redirect_to original_snippets_path
   end
 
   private
@@ -35,4 +37,7 @@ class OriginalSnippetsController < ApplicationController
     params.require(:original_snippet).permit( [:title, :description, :snippet, :language_id])
   end
 
+  def current_snippet
+    @original_snippet = OriginalSnippet.friendly.find(params[:id])
+  end
 end
