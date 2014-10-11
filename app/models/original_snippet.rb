@@ -1,6 +1,6 @@
 class OriginalSnippet < ActiveRecord::Base
 	belongs_to :user
-	has_one :language
+	belongs_to :language
 	has_many :reply_snippets
 	validates :title, :snippet, presence: true
 end
