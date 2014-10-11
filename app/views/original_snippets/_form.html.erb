@@ -1,0 +1,7 @@
+<%= form_for @original_snippet do |f|%>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.text_area :snippet %>
+  <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
+  <%= f.submit "Create" %>
+<% end %>

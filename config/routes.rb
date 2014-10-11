@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
+  
   resources :users, except: :index
 
   root 'sessions#index'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :original_snippets
+  resources :reply_snippets
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
