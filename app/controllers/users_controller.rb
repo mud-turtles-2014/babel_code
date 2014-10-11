@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     if user.save
       redirect_to '/' #change this to login page
     else
-      redirect_to new_user_path
+      flash[:signin_error] = user.errors.full_messages
+      redirect_to "/login"
     end
   end
 

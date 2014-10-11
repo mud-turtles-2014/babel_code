@@ -20,9 +20,8 @@
 </div>
 
 <%= form_for @user do |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :username, placeholder: "Name" %>
   <%= f.text_field :email, placeholder: "Email" %>
-  <%= f.text_field :phone_number, placeholder: "Phone" %>
   <%= f.password_field :password, placeholder: "Password" %>
   <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
   <%= f.submit "Sign Up" %>
