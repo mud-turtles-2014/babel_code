@@ -10,5 +10,11 @@
 
 <%= yield %>
 
+<% if session[:id] %>
+  <a href="/logout">Log Out</a>
+<% else %>
+  <a href="/login">Login/Sign Up</a>
+<% end %>
+
 </body>
 </html>
