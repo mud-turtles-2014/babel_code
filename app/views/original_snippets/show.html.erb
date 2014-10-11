@@ -1,6 +1,6 @@
 <h1><%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
-<p><%= @original_snippet.snippet %></p>
+<pre><code><%= @original_snippet.snippet %></code></pre>
 <p>Language: <%= @original_snippet.language.language %></p>
 
 <% if @original_snippet.user == @current_user %>
