@@ -23,6 +23,8 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def show
+    @original_snippet = OriginalSnippet.find(params[:id])
+    @language_name = language_name(@original_snippet.language_id)
   end
 
   def destroy
@@ -30,7 +32,10 @@ class OriginalSnippetsController < ApplicationController
 
   private
   def original_snippet_params
-    params.require(:original_snippet).permit( [:title, :description, :snippet, :lanuguage_id])
+    params.require(:original_snippet).permit( [:title, :description, :snippet, :language_id])
   end
 
+  def language_name(language_id)
+    Language.find(language_id).language
+  end
 end
