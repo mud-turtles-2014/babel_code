@@ -7,7 +7,7 @@ class OriginalSnippet < ActiveRecord::Base
 	has_many :reply_snippets
 
 	validates :title, :snippet, presence: true
-  validates :slug, uniqueness: true
+  validates :title, uniqueness: { :case_sensitive => true }
 
   before_save :add_slug
 
