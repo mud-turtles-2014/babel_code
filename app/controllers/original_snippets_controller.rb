@@ -24,6 +24,7 @@ class OriginalSnippetsController < ApplicationController
   def show
     @original_snippet = OriginalSnippet.find(params[:id])
     @reply_snippets = @original_snippet.reply_snippets.all
+    @reply_snippet = ReplySnippet.new
   end
 
   def destroy
