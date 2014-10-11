@@ -55,7 +55,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.3)
+    ffi (1.9.6)
     gh (0.13.2)
       addressable
       backports
@@ -155,7 +155,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    travis (1.7.1)
+    travis (1.7.2)
       addressable (~> 2.3)
       backports
       faraday (~> 0.9)
