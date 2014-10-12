@@ -48,7 +48,7 @@ Scroll down to view replies<br>
       <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
     <br></div>
 
-      <p><div class="fun-box"></div><%= reply.description %></p><p><%= reply.description %></p>
+      <div class="fun-box"></div><%= reply.description %>
       <pre><code><%= reply.snippet %></code></pre>
       <p>Language: <%= reply.language.language %></p>
       <% if reply.user == @current_user %>
