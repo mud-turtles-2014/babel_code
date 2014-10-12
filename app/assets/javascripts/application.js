@@ -50,6 +50,7 @@ $(function() {
   }
   hideShow($('#login-btn'),$('#login-div'));
   hideShow($('#signup-btn'),$('#signup-div'));
+  hideShow($('#create-reply-btn'),$('.create-reply'));
 
 })
 

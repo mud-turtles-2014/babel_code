@@ -1,26 +1,25 @@
 <div class="create-snip">
-<div class="vote-btn">
-  <%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post, :class => "button" %>
-  <p><%= @original_snippet.tally_votes %></p>
-  <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
-</div>
+  <div class="vote-btn">
+    <%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post, :class => "button" %>
+      <p><%= @original_snippet.tally_votes %></p>
+      <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
+  </div>
 
-<h1><div class="fun-box"></div>
+  <h1><div class="fun-box"></div>
   <%= @original_snippet.title %></h1>
-<p><%= @original_snippet.description %></p>
-<pre><%= @original_snippet.snippet %></pre>
-<p>Language: <%= @original_snippet.language.language %></p>
-
-
-
-<% if @original_snippet.user == @current_user %>
-  <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
-  <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
-<% end %>
+    <p><%= @original_snippet.description %></p>
+    <pre><%= @original_snippet.snippet %></pre>
+    <p>Language: <%= @original_snippet.language.language %></p>
+    <% if @original_snippet.user == @current_user %>
+    <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
+    <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
+    <% end %>
 </div>
 
+
+<h3>Create a reply</h3>
+<button class="button", id="create-reply-btn">Create a reply</button><br>
 <div class="create-reply">
-  <h3>Create a reply</h3>
   <%= form_for @reply_snippet do |f| %>
   <div class="orig-snip"><ul>
     <li>Description:<br>
@@ -31,7 +30,7 @@
     <%= f.collection_select :language_id, Language.order(:language), :id, :language, :class=>"button"%></li></ul>
     <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
     <%= f.submit "Reply", :class => "reply-button" %>
-    <div>
+    </div>
   <% end %>
 </div>
 
