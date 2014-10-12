@@ -64,16 +64,16 @@ p {
 	padding: 2px;
 	padding-left: 12px;
 }
-.login-div {
+#login-div {
 	height: 400px;
 	text-align: center;
-	width: 120px;
+	width: 150px;
 	display: inline-block;
 	padding-right: 12%;
 	padding-left: 12%;
 	opacity: 0.6;
 }
-.signup-div {
+#signup-div {
 	height: 350px;
 	text-align: center;
 	width: 200px;
