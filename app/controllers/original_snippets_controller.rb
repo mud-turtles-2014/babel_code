@@ -31,6 +31,7 @@ class OriginalSnippetsController < ApplicationController
 
   def show
     @reply_snippets = @original_snippet.reply_snippets.all
+    @reply_snippets = @reply_snippets.sort { |snip1, snip2| snip2.tally_votes <=> snip1.tally_votes }
     @reply_snippet = ReplySnippet.new
     @current_user = current_user
   end
