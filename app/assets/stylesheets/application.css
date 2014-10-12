@@ -102,9 +102,7 @@ p {
 	display: inline-block;
 	float:absolute;
 }
-.button:hover {
-	background-color:
-}
+
 .welcome {
 	margin: 70px;
 	padding-left: 25px;
