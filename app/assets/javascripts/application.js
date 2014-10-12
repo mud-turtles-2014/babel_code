@@ -15,9 +15,6 @@
 //= require_tree .
 
 $(function() {
-
-
-
   $('.edit_reply').click(function() {
     // add edit display here
   })
@@ -44,15 +41,22 @@ $(function() {
   function hideShow(buttonID, showItem){
   $(showItem).hide();
   $(buttonID).on('click', function(){
-      $(showItem).slideToggle("slow", function(){         
+      $(showItem).slideToggle("slow", function(){
       });
     })
   }
-  hideShow($('#login-btn'),$('#login-div'));
-  hideShow($('#signup-btn'),$('#signup-div'));
+  // hideShow($('#login-btn'),$('#login-div'));
+  // hideShow($('#signup-btn'),$('#signup-div'));
   hideShow($('#create-reply-btn'),$('.create-reply'));
-  // hideShow($('#all-reply-btn'),$('#all-replies-div'));
-
+  $('#signup-div').hide();
+  $('#signup-btn').click(function() {
+    $('#signup-div').show();
+    $('#login-div').hide();
+  })
+    $('#login-btn').click(function() {
+    $('#login-div').show();
+    $('#signup-div').hide();
+  })
 })
 
 
