@@ -1,11 +1,11 @@
 <h1><%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
-<pre><code><%= @original_snippet.snippet %></code></pre>
+<pre><%= @original_snippet.snippet %></pre>
 <p>Language: <%= @original_snippet.language.language %></p>
 
 <% if @original_snippet.user == @current_user %>
-  <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' %>
-  <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get %>
+  <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
+  <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
 <% end %>
 
 
@@ -14,10 +14,10 @@
   Description:<br>
   <%= f.text_area :description %><br>
   Code Snippet:<br>
-  <pre><%= f.text_area :snippet %></pre><br>
+  <code><%= f.text_area :snippet %></code><br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
-  <%= f.submit "Reply" %>
+  <%= f.submit "Reply", :class => "button" %>
 <% end %>
 
 <% @reply_snippets.each do |reply| %>
@@ -26,7 +26,7 @@
   <pre><%= reply.snippet %></pre>
   <p>Language: <%= reply.language.language %></p>
   <% if reply.user == @current_user %>
-    <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
+    <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button" %>
     <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
   <% end %>
   </div>
