@@ -43,9 +43,9 @@
         <div class="reply-snip">
             <div class="vote-btn">
               <div class="arrow-up"></div>
-        <br><%= button_to "Up", { :controller => 'votes', action: 'create', reply_snippet: reply, vote: 1 }, method: :post, :class=>"button" %>
+        <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
         <br><br><p><%= reply.tally_votes %></p>
-        <br><%= button_to "Down", { :controller => 'votes', action: 'create', reply_snippet: reply, vote: -1 }, method: :post, :class =>"button" %>
+        <br><%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
         <br><div class="arrow-down"></div>
   </div>
           <p><div class="fun-box"></div><%= reply.description %></p><p><%= reply.description %></p>

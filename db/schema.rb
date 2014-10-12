@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 20141012165027) do
     t.integer  "original_snippet_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "votable_id"
-    t.string   "votable_type"
   end
 
   create_table "users", force: true do |t|
