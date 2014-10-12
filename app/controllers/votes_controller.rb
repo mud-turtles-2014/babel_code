@@ -3,7 +3,8 @@ class VotesController < ApplicationController
   end
 
   def create
-    current_user.votes.create(reply_snippet_id: params[:reply_snippet], vote: params[:vote])
+    current_user.votes.create(votable_id: params[:votable_id], votable_type: params[:votable_type], vote: params[:vote])
     redirect_to :back
   end
+
 end
