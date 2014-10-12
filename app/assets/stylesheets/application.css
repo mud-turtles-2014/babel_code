@@ -106,12 +106,11 @@ p {
 	opacity: .8;
 	border-radius: 20px;
 	color: #F5FFFF;
-	background-color:  #7B7F7F;
+	background-color: #7B7F7F;
 	opacity: .5;
 }
 .welcome h1 {
 	padding: 20px;
-
 }
 .welcome h2 {
 	padding: 8px;
@@ -123,10 +122,9 @@ p {
 	padding-right: 15px
 }
 .create-snip{
-
+	width: 85%
 }
 input{
-
 	border-radius: 10px;
 	padding: 10px;
 	margin-left: 20px;	
@@ -147,10 +145,10 @@ textarea {
 pre {
 	background-color: #7B7F7F;
 	border:none;
-	width: 40%;
-	height: 60px;
+	width: 70%;
+	height: auto;
 	color: #F5FFFF;
 	border-radius: 20px;
-	padding: 10px;
+	padding: 20px;
 	margin-left: 20px;
 }

@@ -1,3 +1,4 @@
+<div class="create-snip">
 <h1><%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
 <pre><%= @original_snippet.snippet %></pre>
@@ -7,10 +8,12 @@
   <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
   <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
 <% end %>
+</div>
 
 
 
 <%= form_for @reply_snippet do |f| %>
+<div class="create-snip">
   Description:<br>
   <%= f.text_area :description %><br>
   Code Snippet:<br>
@@ -18,6 +21,7 @@
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
   <%= f.submit "Reply", :class => "button" %>
+  <div>
 <% end %>
 
 <% @reply_snippets.each do |reply| %>
