@@ -88,13 +88,34 @@ pre {
 	width: auto;
 }
 .login-div {
-	margin-left: auto;
-	margin-right: auto;
+	height: 400px;
+	text-align: center;
+	width: 120px;
 	display: inline-block;
+	padding-right: 12%;
+	padding-left: 12%;
+	/*margin-top: -250px;*/
+	opacity: 0.6;
 }
 .signup-div {
-	margin-left: auto;
-	margin-right: auto;
+	height: 350px;
+	text-align: center;
+	width: 200px;	
 	display: inline-block;
+	padding-left: 12%;
+	padding-right: 12%;
+	opacity: 0.6;
+	/*padding-top: 100px;*/
 }
 
+
+.button {
+	background-color: #7B7F7F;
+	border:none;
+	font-size: .4em;
+	border-radius: 3px;
+	color: #F5FFFF;
+}
+.button:hover {
+	background-color: 
+}
