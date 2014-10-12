@@ -51,7 +51,7 @@ $(function() {
   hideShow($('#login-btn'),$('#login-div'));
   hideShow($('#signup-btn'),$('#signup-div'));
   hideShow($('#create-reply-btn'),$('.create-reply'));
-  hideShow($('#all-reply-btn'),$('#all-replies-div'));
+  // hideShow($('#all-reply-btn'),$('#all-replies-div'));
 
 })
 
