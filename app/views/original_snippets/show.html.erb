@@ -17,11 +17,22 @@
 <% end %>
 
 <% @reply_snippets.each do |reply| %>
-  <p><%= reply.description %></p>
-  <pre><code><%= reply.snippet %></code></pre>
-  <p>Language: <%= reply.language.language %></p>
-  <% if reply.user == @current_user %>
-    <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
-    <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
-  <% end %>
+  <table>
+    <tr>
+      <td>
+        <p>up</p>
+        <p>total votes</p>
+        <p>down</p>
+      </td>
+      <td>
+        <p><%= reply.description %></p>
+        <pre><code><%= reply.snippet %></code></pre>
+        <p>Language: <%= reply.language.language %></p>
+        <% if reply.user == @current_user %>
+          <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
+          <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
+        <% end %>
+      </td>
+    </tr>
+  <table>
 <% end %>
