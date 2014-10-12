@@ -19,6 +19,7 @@
   <%= f.text_area :description %></li><br>
   <li>Code Snippet:<br>
   <%= f.text_area :snippet %><br>
+  <li>Language:<br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %></li></ul>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
   <%= f.submit "Reply", :class => "reply-button" %>

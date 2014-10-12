@@ -6,6 +6,7 @@
   <%= f.text_area :description %><br>
   Code Snippet:<br>
   <code><%= f.text_area :snippet %></code><br>
+  Language:<br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.submit "Save", :class => "button" %>
 </div>

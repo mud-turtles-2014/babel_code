@@ -93,11 +93,13 @@ p {
 .button {
 	background-color: #7B7F7F;
 	border: none;
-	font-size: .4em;
+	font-size: 1em;
 	border-radius: 3px;
 	color: #F5FFFF;
 	display: inline-block;
 	float:right;
+	padding:4px;
+	margin: 4px;
 }
 .reply-button{
 	background-color: #7B7F7F;
@@ -151,8 +153,8 @@ textarea {
 	padding: 10px;
 	margin-left: 20px;
 	border-color: #7B7F7F;
-	width: 350px; 
-
+	width: 750px; 
+	height: 200px;
 }
 .reply-snip {
 	opacity: .52;
@@ -178,5 +180,17 @@ ul.li {
 	height: auto;
 }
 code {
+
+}
+#original_snippet_language_id {
+	margin: 8px;
+	margin-left: 22px;
+	/*background-color: #69F5E0;*/
+	/*background-color: #7B7F7F;*/
+	color: black;
+	font-size: 1em;
+	border: none;
+	opacity: .85;
+	display: inline-block;
 
 }
