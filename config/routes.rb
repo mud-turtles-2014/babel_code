@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+
   resources :users, except: :index
 
   root 'sessions#index'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :original_snippets
   resources :reply_snippets
+  resources :votes
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
