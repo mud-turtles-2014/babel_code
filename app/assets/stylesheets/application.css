@@ -194,9 +194,7 @@ a:hover {
 	text-align: center;
 	margin-right: auto;
 	margin-left:auto;
-	/*background-color: #69F5E0;*/
 	border-radius: 15px;
-/*	opacity: .6;*/
 	color: #7B7F7F;
 	height: 300px;
 	margin-left: -90px;
@@ -228,3 +226,32 @@ a:hover {
 	margin-right: auto;
 	margin-top: 12px;
 }
+
+
+.recent-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
+.javascript-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
+.ruby-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
