@@ -20,9 +20,10 @@
   <table>
     <tr>
       <td>
-        <p>up</p>
-        <p>total votes</p>
-        <p>down</p>
+
+        <%= button_to "Up", { :controller => 'votes', action: 'create', reply_snippet: reply, vote: 1 }, method: :post %>
+        <p><%= reply.tally_votes %></p>
+        <%= button_to "Down", { :controller => 'votes', action: 'create', reply_snippet: reply, vote: -1 }, method: :post %>
       </td>
       <td>
         <p><%= reply.description %></p>
