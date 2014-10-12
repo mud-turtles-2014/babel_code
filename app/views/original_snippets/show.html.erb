@@ -5,6 +5,10 @@
 <pre><%= @original_snippet.snippet %></pre>
 <p>Language: <%= @original_snippet.language.language %></p>
 
+<%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post %>
+<p><%= @original_snippet.tally_votes %></p>
+<%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post %>
+
 <% if @original_snippet.user == @current_user %>
   <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
   <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
