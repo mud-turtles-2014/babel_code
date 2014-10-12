@@ -39,4 +39,22 @@ $(function() {
     $('.javascript-posts').hide();
     $('.ruby-posts').hide();
   });
+
+
+  function hideShow(buttonID, showItem){
+  $(showItem).hide();
+  $(buttonID).on('click', function(){
+      $(showItem).slideToggle("slow", function(){         
+      });
+    })
+  }
+  hideShow($('#login-btn'),$('#login-div'));
+  hideShow($('#signup-btn'),$('#signup-div'));
+  hideShow($('#create-reply-btn'),$('.create-reply'));
+  // hideShow($('#all-reply-btn'),$('#all-replies-div'));
+
 })
+
+
+
+

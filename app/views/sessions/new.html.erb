@@ -1,6 +1,9 @@
-<div class="login-div">
+<button class="button", id="login-btn">Login</button>
+<button class="button", id="signup-btn">SignUp</button><br>
+
+<div id="login-div">
   <h1>Log In</h1>
-  <p> Please login if you are a current user of Babel Code.
+  <p> Please login if you are a current user of x Code.
   <div class="error">
     <%=flash[:error]%>
   </div>
@@ -11,7 +14,7 @@
   <% end %>
 </div>
 
-<div class="signup-div">
+<div id="signup-div">
   <h1>Sign Up</h1>
   <p>Create a Babel Code account, and view code solutions in other languages.
   <div class="error">
