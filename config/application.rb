@@ -29,5 +29,3 @@ module BabelCode
   end
 end
 
-config.serve_static_assets = true
-
