@@ -18,4 +18,22 @@ $(function() {
   $('.edit_reply').click(function() {
     // add edit display here
   })
+
+  $('.ruby-posts').hide();
+  $('.javascript-posts').hide();
+  $('.ruby-button').click(function(){
+    $('.ruby-posts').show();
+    $('.javascript-posts').hide();
+    $('.recent-posts').hide();
+  });
+  $('.javascript-button').click(function(){
+    $('.javascript-posts').show();
+    $('.recent-posts').hide();
+    $('.ruby-posts').hide();
+  });
+  $('.recent-button').click(function(){
+    $('.recent-posts').show();
+    $('.javascript-posts').hide();
+    $('.ruby-posts').hide();
+  });
 })

@@ -1,0 +1,32 @@
+<div class="tab-box">
+
+  <ul class="tab-nav">
+    <button class ="recent-button">Recent Posts</button></a>
+    <button class="ruby-button">Ruby Posts</button></a>
+    <button class="javascript-button">JavaScript Posts</button></a>
+  </ul>
+
+  <div class="recent-posts">
+    <h2>Recent Posts</a></h2>
+    <ul><% @recent.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="ruby-posts">
+    <h2>Ruby Posts</a></h2>
+    <ul><% @ruby_entries.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="javascript-posts">
+    <h2>JavaScript Posts</a></h2>
+    <ul><% @js_entries.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
