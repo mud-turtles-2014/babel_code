@@ -1,5 +1,6 @@
 <div class="create-snip">
-<h1><%= @original_snippet.title %></h1>
+<h1><div class="fun-box"></div>
+  <%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
 <pre><%= @original_snippet.snippet %></pre>
 <p>Language: <%= @original_snippet.language.language %></p>
@@ -11,22 +12,23 @@
 </div>
 
 
-
+<h2>Create a reply</h2>
 <%= form_for @reply_snippet do |f| %>
-<div class="create-snip">
-  Description:<br>
-  <%= f.text_area :description %><br>
-  Code Snippet:<br>
+<div class="orig-snip"><ul>
+  <li>Description:<br>
+  <%= f.text_area :description %></li><br>
+  <li>Code Snippet:<br>
   <code><%= f.text_area :snippet %></code><br>
-  <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
+  <%= f.collection_select :language_id, Language.order(:language), :id, :language %></li></ul>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
   <%= f.submit "Reply", :class => "button" %>
   <div>
 <% end %>
 
+<h2>Babel Replies</h2>
 <% @reply_snippets.each do |reply| %>
   <div class="reply-snip">
-  <p><%= reply.description %></p>
+  <p><div class="fun-box"></div><%= reply.description %></p>
   <pre><%= reply.snippet %></pre>
   <p>Language: <%= reply.language.language %></p>
   <% if reply.user == @current_user %>

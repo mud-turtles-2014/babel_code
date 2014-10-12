@@ -49,7 +49,6 @@ nav h1{
 li {
 	list-style-type: none;
 	display: inline;
-
 	padding-right: 60px;
 }
 h1 {
@@ -64,6 +63,7 @@ h1 {
 	border-radius: 6px;
 	background-color: #547F7E;
 	display: inline-block;
+	padding:3px;
 }
 p {
 	padding: 6px;
@@ -76,7 +76,6 @@ p {
 	display: inline-block;
 	padding-right: 12%;
 	padding-left: 12%;
-	/*margin-top: -250px;*/
 	opacity: 0.6;
 }
 .signup-div {
@@ -132,7 +131,6 @@ input{
 
 textarea {
 	background-color: #7B7F7F;
-	/*border:none;*/
 	height: 60px;
 	color: #F5FFFF;
 	border-radius: 20px;
@@ -151,4 +149,10 @@ pre {
 	border-radius: 20px;
 	padding: 20px;
 	margin-left: 20px;
+}
+ul.li {
+	display: inline;
+}
+.orig-snip {
+	
 }
