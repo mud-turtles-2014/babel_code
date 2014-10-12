@@ -34,24 +34,28 @@
   <% end %>
 </div>
 
-<h2>Babel Replies</h2>
+
+<button class="button", id="all-reply-btn">View All Replies</button><br>
+
 <% @reply_snippets.each do |reply| %>
 
-        <div class="reply-snip">
-            <div class="vote-btn">
-        <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
-        <p><%= reply.tally_votes %></p>
-        <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
-        <br>
-  </div>
-          <p><div class="fun-box"></div><%= reply.description %></p><p><%= reply.description %></p>
-          <pre><code><%= reply.snippet %></code></pre>
-          <p>Language: <%= reply.language.language %></p>
-          <% if reply.user == @current_user %>
-            <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
-            <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
-          <% end %>
-        </div>
+<div id="all-replies-div">
 
-<% end %>
+  <div class="reply-snip">
+    <div class="vote-btn">
+      <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
+      <p><%= reply.tally_votes %></p>
+      <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
+    <br></div>
+
+      <p><div class="fun-box"></div><%= reply.description %></p><p><%= reply.description %></p>
+      <pre><code><%= reply.snippet %></code></pre>
+      <p>Language: <%= reply.language.language %></p>
+      <% if reply.user == @current_user %>
+        <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 
