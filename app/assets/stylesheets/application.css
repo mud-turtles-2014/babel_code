@@ -187,3 +187,31 @@ ul.li {
 a:hover {
 	color: #69F5E0;
 }
+
+.recent-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
+.javascript-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
+.ruby-button{
+	border-radius: 20px;
+	font-size: 1em;
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7B7F7F;
+}
+
