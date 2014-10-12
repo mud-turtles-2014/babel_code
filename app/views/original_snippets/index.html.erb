@@ -1,0 +1,20 @@
+<!-- <div class="tabber"></div> -->
+<h2>All Posts</h2>
+
+<ul><% @recent.each do |original_snippet| %>
+  <li><%= link_to original_snippet.title, original_snippet%></li>
+<% end %>
+</ul>
+
+
+<h2>Ruby Posts</h2>
+<ul><% @ruby_entries.each do |original_snippet| %>
+  <li><%= link_to original_snippet.title, original_snippet%></li>
+<% end %>
+</ul>
+
+<h2>JavaScript Posts</h2>
+<ul><% @js_entries.each do |original_snippet| %>
+  <li><%= link_to original_snippet.title, original_snippet%></li>
+<% end %>
+</ul>
