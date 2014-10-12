@@ -14,7 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <!-- <h1><a href="/">Babel Code</a></h1> -->
-<nav><ul>
+<nav>
 	<li><h1><a href="/">Babel Code</a></h1></li>
 <% if session[:id] %>
 	<li><a href="/original_snippets/new">New Code Snippet</a></li>
@@ -23,7 +23,7 @@
 <% else %>
   <li><a href="/login">Login/Sign Up</a></li>
 <% end %>
-</ul></nav>
+</nav>
 <body>
 
 <%= yield %>

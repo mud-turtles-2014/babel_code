@@ -20,9 +20,8 @@
   <%= f.submit "Reply" %>
 <% end %>
 
-<div class="fun-box"></div>
-<div class="reply-snip">
 <% @reply_snippets.each do |reply| %>
+  <div class="reply-snip">
   <p><%= reply.description %></p>
   <pre><%= reply.snippet %></pre>
   <p>Language: <%= reply.language.language %></p>
@@ -30,5 +29,6 @@
     <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
     <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
   <% end %>
+  </div>
 <% end %>
-</div>
+

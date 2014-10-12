@@ -22,7 +22,7 @@ body {
 code {
 	margin: 8px;
 	padding: 15px;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	background-color: white;
 	border-radius: 8px
 }
@@ -30,25 +30,37 @@ a {
 	text-decoration: none;
 }
 a:visited {
-	color: #403D33;
+	color: #F5FFFF;
+}
+a:link {
+	color: #F5FFFF;;
 }
 a:hover {
 	color: #B299AF;
 }
 nav {
-	background-color: #FFFBE7;
-	margin: 2px;
+	background-color: #7B7F7F;
+	width: auto;
+	height: auto;
+	margin: -10px;
+	margin-bottom: 15px;
+}
+a:active {
+    color: #547F7E;
+}
+nav h1{
 	display: inline;
 }
-
 li {
 	list-style-type: none;
 	display: inline;
-	padding: 16px;
+	padding-left: 90px;
 }
 h1 {
-	padding: 5px;
+	padding: 2px;
 	margin:5px;
+	font-size: 2em;
+
 }
 
 .reply-snip {
@@ -60,7 +72,7 @@ h1 {
 	height: 20px;
 	width: 20px;
 	border-radius: 6px;
-	background-color: #FFFBE7;
+	background-color: #547F7E;
 	display: inline-block;
 }
 p {
@@ -74,5 +86,15 @@ pre {
 	background-color: white;
 	border-radius: 8px
 	width: auto;
+}
+.login-div {
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+}
+.signup-div {
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
 }
 
