@@ -1,13 +1,17 @@
 <div class="create-snip">
+<div class="vote-btn">
+  <%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post, :class => "button" %>
+  <p><%= @original_snippet.tally_votes %></p>
+  <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
+</div>
+
 <h1><div class="fun-box"></div>
   <%= @original_snippet.title %></h1>
 <p><%= @original_snippet.description %></p>
 <pre><%= @original_snippet.snippet %></pre>
 <p>Language: <%= @original_snippet.language.language %></p>
 
-<%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post %>
-<p><%= @original_snippet.tally_votes %></p>
-<%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post %>
+
 
 <% if @original_snippet.user == @current_user %>
   <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
@@ -15,42 +19,40 @@
 <% end %>
 </div>
 
-
-<h3>Create a reply</h3>
-<%= form_for @reply_snippet do |f| %>
-<div class="orig-snip"><ul>
-  <li>Description:<br>
-  <%= f.text_area :description %></li><br>
-  <li>Code Snippet:<br>
-  <%= f.text_area :snippet %><br>
-  <li>Language:<br>
-  <%= f.collection_select :language_id, Language.order(:language), :id, :language %></li></ul>
-  <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
-  <%= f.submit "Reply", :class => "reply-button" %>
-  <div>
-<% end %>
+<div class="create-reply">
+  <h3>Create a reply</h3>
+  <%= form_for @reply_snippet do |f| %>
+  <div class="orig-snip"><ul>
+    <li>Description:<br>
+    <%= f.text_area :description %></li><br>
+    <li>Code Snippet:<br>
+    <%= f.text_area :snippet %><br>
+    <li>Language:<br>
+    <%= f.collection_select :language_id, Language.order(:language), :id, :language, :class=>"button"%></li></ul>
+    <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
+    <%= f.submit "Reply", :class => "reply-button" %>
+    <div>
+  <% end %>
+</div>
 
 <h2>Babel Replies</h2>
 <% @reply_snippets.each do |reply| %>
-  <table>
-    <tr>
-      <td>
-        <%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post %>
-        <p><%= reply.tally_votes %></p>
-        <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post %>
-      </td>
-      <td>
+
         <div class="reply-snip">
+            <div class="vote-btn">
+        <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
+        <p><%= reply.tally_votes %></p>
+        <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
+        <br>
+  </div>
           <p><div class="fun-box"></div><%= reply.description %></p><p><%= reply.description %></p>
           <pre><code><%= reply.snippet %></code></pre>
           <p>Language: <%= reply.language.language %></p>
           <% if reply.user == @current_user %>
-            <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>
+            <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
             <!-- <button class="edit_reply" id="<%= reply.id %>">Edit</button> -->
           <% end %>
         </div>
-      </td>
-    </tr>
-  <table>
+
 <% end %>
 
