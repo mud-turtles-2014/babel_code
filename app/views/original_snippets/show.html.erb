@@ -18,7 +18,7 @@
 
 
 
-<button class="button", id="create-reply-btn">Create a reply</button><br>
+Click <button class="button", id="create-reply-btn">reply</button> to this code snippet<br>
 <div class="create-reply">
   <%= form_for @reply_snippet do |f| %>
   <div class="orig-snip"><ul>
@@ -32,10 +32,10 @@
     <%= f.submit "Reply", :class => "reply-button" %>
     </div>
   <% end %>
-</div>
+</div><br>
 
 
-<button class="button", id="all-reply-btn">View All Replies</button><br>
+Scroll down to view replies<br>
 
 <% @reply_snippets.each do |reply| %>
 
