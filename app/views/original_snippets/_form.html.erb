@@ -8,4 +8,5 @@
   <code><%= f.text_area :snippet %></code><br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.submit "Save", :class => "button" %>
+</div>
 <% end %>

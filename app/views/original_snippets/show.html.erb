@@ -12,16 +12,16 @@
 </div>
 
 
-<h2>Create a reply</h2>
+<h3>Create a reply</h3>
 <%= form_for @reply_snippet do |f| %>
 <div class="orig-snip"><ul>
   <li>Description:<br>
   <%= f.text_area :description %></li><br>
   <li>Code Snippet:<br>
-  <code><%= f.text_area :snippet %></code><br>
+  <%= f.text_area :snippet %><br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %></li></ul>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
-  <%= f.submit "Reply", :class => "button" %>
+  <%= f.submit "Reply", :class => "reply-button" %>
   <div>
 <% end %>
 
@@ -29,7 +29,7 @@
 <% @reply_snippets.each do |reply| %>
   <div class="reply-snip">
   <p><div class="fun-box"></div><%= reply.description %></p>
-  <pre><%= reply.snippet %></pre>
+  <pre><code><%= reply.snippet %></code></pre>
   <p>Language: <%= reply.language.language %></p>
   <% if reply.user == @current_user %>
     <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button" %>

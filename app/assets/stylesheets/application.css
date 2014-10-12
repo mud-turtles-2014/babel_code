@@ -61,12 +61,15 @@ h1 {
 	height: 20px;
 	width: 20px;
 	border-radius: 6px;
-	background-color: #547F7E;
+	background-color: #69F5E0;
 	display: inline-block;
-	padding:3px;
+	padding:5px;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 p {
-	padding: 6px;
+	padding: 2px;
 	padding-left: 12px;
 }
 .login-div {
@@ -93,8 +96,17 @@ p {
 	font-size: .4em;
 	border-radius: 3px;
 	color: #F5FFFF;
-	margin: 5px;
+	display: inline-block;
 	float:right;
+}
+.reply-button{
+	background-color: #7B7F7F;
+	border: none;
+	font-size: .4em;
+	border-radius: 3px;
+	color: #F5FFFF;
+	display: inline-block;
+	float:absolute;	
 }
 .button:hover {
 	background-color: 
@@ -121,24 +133,32 @@ p {
 	padding-right: 15px
 }
 .create-snip{
-	width: 85%
+	width: 85%;
+	/*margin-bottom: px;*/
+	border:2px solid black;
 }
 input{
 	border-radius: 10px;
-	padding: 10px;
+	padding: 5px;
 	margin-left: 20px;	
 }
 
 textarea {
-	background-color: #7B7F7F;
-	height: 60px;
-	color: #F5FFFF;
+	/*background-color: #7B7F7F;*/
+	/*height: 60px;*/
+	color: black;
 	border-radius: 20px;
 	padding: 10px;
 	margin-left: 20px;
+	border-color: #7B7F7F;
+	width: 350px; 
+
 }
 .reply-snip {
-	opacity: .8;
+	opacity: .52;
+	background-color: black;
+	padding-bottom: 25px;
+	color: white;
 }
 pre {
 	background-color: #7B7F7F;
@@ -154,5 +174,9 @@ ul.li {
 	display: inline;
 }
 .orig-snip {
-	
+	width: auto;
+	height: auto;
+}
+code {
+
 }
