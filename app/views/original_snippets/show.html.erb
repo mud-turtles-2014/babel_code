@@ -14,10 +14,10 @@
     <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
     <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
     <% end %>
-</div>
+</div><br><br><br>
 
 
-<h3>Create a reply</h3>
+
 <button class="button", id="create-reply-btn">Create a reply</button><br>
 <div class="create-reply">
   <%= form_for @reply_snippet do |f| %>
