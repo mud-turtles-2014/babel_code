@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(function() {
-  $('.code-area').ace({ theme: 'twilight', lang: 'ruby' })
+
 
 
   $('.edit_reply').click(function() {
