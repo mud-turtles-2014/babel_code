@@ -1,20 +1,33 @@
-<!-- <div class="tabber"></div> -->
-<h2>Recent Posts</h2>
+<div class="tab-box">
 
-<ul><% @recent.each do |original_snippet| %>
-  <li><%= link_to original_snippet.title, original_snippet%></li>
-<% end %>
-</ul>
+  <ul class="tab-nav">
+    <a href="#recentposts"><button class ="recent-button">Recent Posts</button></a>
+    <a href="#rubyposts"><button class="ruby-button">Ruby Posts</button></a>
+    <a href="#javascriptposts"><button class="javascript-button">JavaScript Posts</button></a>
+  </ul>
 
+  <div class="recent-posts">
+    <h2><a name="recentposts">Recent Posts</a></h2>
+    <ul><% @recent.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
 
-<h2>Ruby Posts</h2>
-<ul><% @ruby_entries.each do |original_snippet| %>
-  <li><%= link_to original_snippet.title, original_snippet%></li>
-<% end %>
-</ul>
+  <div class="ruby-posts">
+    <h2><a name="rubyposts">Ruby Posts</a></h2>
+    <ul><% @ruby_entries.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
 
-<h2>JavaScript Posts</h2>
-<ul><% @js_entries.each do |original_snippet| %>
-  <li><%= link_to original_snippet.title, original_snippet%></li>
-<% end %>
-</ul>
+  <div class="javascript-posts">
+    <h2><a name="javascriptposts">JavaScript Posts</a></h2>
+    <ul><% @js_entries.each do |original_snippet| %>
+      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% end %>
+    </ul>
+  </div>
+
+</div>
