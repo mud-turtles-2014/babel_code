@@ -11,8 +11,10 @@
 
 
 <%= form_for @reply_snippet do |f| %>
-  <%= f.text_area :description %>
-  <%= f.text_area :snippet %>
+  Description:<br>
+  <%= f.text_area :description %><br>
+  Code Snippet:<br>
+  <pre><%= f.text_area :snippet %></pre><br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
   <%= f.submit "Reply" %>
@@ -22,7 +24,7 @@
 <div class="reply-snip">
 <% @reply_snippets.each do |reply| %>
   <p><%= reply.description %></p>
-  <code><%= reply.snippet %></code>
+  <pre><%= reply.snippet %></pre>
   <p>Language: <%= reply.language.language %></p>
   <% if reply.user == @current_user %>
     <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy' %>

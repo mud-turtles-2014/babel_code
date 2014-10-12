@@ -16,14 +16,14 @@
 
 body {
 	font-family: 'PT Serif', serif;
-	background-color: #CEFFFB;
+	background-color: #F5FFFF;
 	color: #2E2C25;
 }
 code {
 	margin: 8px;
 	padding: 15px;
 	font-size: 1.6em;
-	background-color: #FFFBE7;
+	background-color: white;
 	border-radius: 8px
 }
 a {
@@ -37,7 +37,7 @@ a:hover {
 }
 nav {
 	background-color: #FFFBE7;
-	margin: 5px;
+	margin: 2px;
 	display: inline;
 }
 
@@ -67,3 +67,12 @@ p {
 	padding: 6px;
 	padding-left: 12px;
 }
+pre {
+	margin: 8px;
+	padding: 15px;
+	font-size: 1.6em;
+	background-color: white;
+	border-radius: 8px
+	width: auto;
+}
+

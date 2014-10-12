@@ -1,7 +1,9 @@
 <%= form_for @original_snippet do |f|%>
   <h1><%= @original_snippet.title %></h1>
-  <%= f.text_area :description %>
-  <%= f.text_area :snippet %>
+  Description:<br>
+  <%= f.text_area :description %><br>
+  Code Snippet:<br>
+  <%= f.text_area :snippet %><br>
   <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
   <%= f.submit "Save" %>
 <% end %>
