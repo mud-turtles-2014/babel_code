@@ -33,7 +33,7 @@ a:visited {
 	color: #F5FFFF;
 }
 a:link {
-	color: #F5FFFF;;
+	color: #F5FFFF;
 }
 a:hover {
 	color: #B299AF;
@@ -105,10 +105,7 @@ pre {
 	padding-left: 12%;
 	padding-right: 12%;
 	opacity: 0.6;
-	/*padding-top: 100px;*/
 }
-
-
 .button {
 	background-color: #7B7F7F;
 	border:none;
@@ -118,4 +115,26 @@ pre {
 }
 .button:hover {
 	background-color: 
+}
+.welcome {
+	margin: 70px;
+	padding-left: 25px;
+	opacity: .8;
+	border-radius: 20px;
+	color: #F5FFFF;
+	background-color:  #7B7F7F;
+	opacity: .5;
+}
+.welcome h1 {
+	padding: 20px;
+
+}
+.welcome h2 {
+	padding: 8px;
+	text-align: center;
+}
+.welcome p {
+	padding:28px;
+	padding-left: 25px
+	padding-right: 15px
 }

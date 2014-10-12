@@ -1,10 +1,11 @@
 <%= form_for @original_snippet do |f|%>
+<div class="create-snip"
   Title:<br>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br>
   Description:<br>
-  <%= f.text_area :description %>
+  <%= f.text_area :description %><br>
   Code Snippet:<br>
-  <%= f.text_area :snippet %>
-  <%= f.collection_select :language_id, Language.order(:language), :id, :language %>
-  <%= f.submit "Save" %>
+  <%= f.text_area :snippet %><br>
+  <%= f.collection_select :language_id, Language.order(:language), :id, :language %><br>
+  <%= f.submit "Save", :class => "button" %>
 <% end %>
