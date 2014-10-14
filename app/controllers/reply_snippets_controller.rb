@@ -3,10 +3,10 @@ class ReplySnippetsController < ApplicationController
   def create
     @reply_snippet = current_user.reply_snippets.new(reply_snippet_params)
 
-    if @reply_snippet.save
+    if @reply_snippet.save # ajaxify this
       redirect_to original_snippet_path(@reply_snippet.original_snippet)
     else
-      redirect_to original_snippet_path(@reply_snippet.original_snippet)
+      render original_snippet_path(@reply_snippet.original_snippet)
     end
   end
 

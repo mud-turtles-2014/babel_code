@@ -1,0 +1,7 @@
+<div class="<%= title.parameterize %>">
+    <h2><%= title %></h2>
+    <ul><% entries.each do |entry| %>
+      <li><%= link_to entry.title, entry%></li>
+    <% end %>
+    </ul>
+  </div>

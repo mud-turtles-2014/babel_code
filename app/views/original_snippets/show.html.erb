@@ -10,7 +10,7 @@
     <p><%= @original_snippet.description %></p>
     <pre><%= @original_snippet.snippet %></pre>
     <p>Language: <%= @original_snippet.language.language %></p>
-    <% if @original_snippet.user == @current_user %>
+    <% if @original_snippet.user == current_user %>
     <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
     <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
     <% end %>
@@ -43,7 +43,7 @@ Scroll down to view replies<br>
 
   <div class="reply-snip">
     <div class="vote-btn">
-      <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
+      <br><%= button_to "Up", votes_path(), { votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
       <p><%= reply.tally_votes %></p>
       <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
     <br></div>
@@ -51,7 +51,7 @@ Scroll down to view replies<br>
       <div class="fun-box"></div><%= reply.description %>
       <pre><code><%= reply.snippet %></code></pre>
       <p>Language: <%= reply.language.language %></p>
-      <% if reply.user == @current_user %>
+      <% if reply.owned_by(current_user) %>
         <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
       <% end %>
     </div>

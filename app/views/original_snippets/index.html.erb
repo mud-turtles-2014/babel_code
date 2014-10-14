@@ -6,6 +6,14 @@
     <button class="javascript-button">JavaScript Posts</button>
   </ul>
 
+
+
+  <%= render partial: "entries", collection: @recent, locals: {title: "Recent Posts", id: "recent-id"} %>
+
+  <%= render partial: "entries", collection: @ruby_entries, locals: {title: "Recent Posts", id: "recent-id"} %>
+
+  <%= render partial: "entries", collection: @js_entries %>
+
   <div class="recent-posts">
     <h2>Recent Posts</h2>
     <ul><% @recent.each do |original_snippet| %>

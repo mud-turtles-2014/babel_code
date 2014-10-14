@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :original_snippets
-  resources :reply_snippets
+  resources :original_snippets do
+    resources :reply_snippets, only: [:create, :edit, :destroy]
+  end
   resources :votes
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

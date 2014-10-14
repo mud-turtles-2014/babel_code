@@ -17,11 +17,11 @@ class OriginalSnippetsController < ApplicationController
     if @original_snippet.save
       redirect_to original_snippet_path(@original_snippet)
     else
-      redirect_to new_original_snippet_path
+      render :new
     end
   end
 
-  def edit
+  def edit # can be deleted and will still work
   end
 
   def update
@@ -30,10 +30,12 @@ class OriginalSnippetsController < ApplicationController
   end
 
   def show
-    @reply_snippets = @original_snippet.reply_snippets.all
-    @reply_snippets = @reply_snippets.sort { |snip1, snip2| snip2.tally_votes <=> snip1.tally_votes }
+    # @reply_snippets = @original_snippet.reply_snippets.all
+    # @reply_snippets = @reply_snippets.sort { |snip1, snip2| snip2.tally_votes <=> snip1.tally_votes }
+    # @reply_snippets = OriginalSnippet.sort_by_votes
+    # refactor out all of the above calls into semantic methods on your OriginalSnippet model
     @reply_snippet = ReplySnippet.new
-    @current_user = current_user
+    # @current_user = current_user
   end
 
   def destroy
