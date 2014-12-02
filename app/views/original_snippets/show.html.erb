@@ -19,8 +19,8 @@
 
 
 Click <button class="button", id="create-reply-btn">reply</button> to this code snippet<br>
-<div class="create-reply" id="create-reply">
-  <%= form_for @reply_snippet do |f| %>
+<div class="create-reply">
+  <%= form_for(@reply_snippet, remote: true) do |f| %>
   <div class="orig-snip"><ul>
     <li>Description:<br>
     <%= f.text_area :description %></li><br>
@@ -37,25 +37,10 @@ Click <button class="button", id="create-reply-btn">reply</button> to this code 
 
 Scroll down to view replies<br>
 
-<% @reply_snippets.each do |reply| %>
-
 <div id="all-replies-div">
-
-  <div class="reply-snip">
-    <div class="vote-btn">
-      <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
-      <p><%= reply.tally_votes %></p>
-      <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
-    <br></div>
-
-      <div class="fun-box"></div><%= reply.description %>
-      <pre><code><%= reply.snippet %></code></pre>
-      <p>Language: <%= reply.language.language %></p>
-      <% if reply.user == @current_user %>
-        <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
-      <% end %>
-    </div>
-  <% end %>
+<% @reply_snippets.each do |reply| %>
+  <%= render :partial => 'reply_snippet', :locals => {:current_user => @current_user, :reply => reply } %>
+<% end %>
 </div>
 
 
