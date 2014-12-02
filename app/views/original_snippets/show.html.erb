@@ -39,7 +39,7 @@ Scroll down to view replies<br>
 
 <div id="all-replies-div">
 <% @reply_snippets.each do |reply| %>
-  <%= render :partial => 'reply_snippet', :locals => {:current_user => @current_user, :reply => reply } %>
+  <%= render partial: 'reply_snippet', locals: {current_user: @current_user, reply: reply } %>
 <% end %>
 </div>
 
