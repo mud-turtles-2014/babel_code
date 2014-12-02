@@ -1,13 +1,9 @@
 class ReplySnippetsController < ApplicationController
 
   def create
-    @reply_snippet = current_user.reply_snippets.new(reply_snippet_params)
+    @reply_snippet = current_user.reply_snippets.create(reply_snippet_params)
 
-    if @reply_snippet.save
-      redirect_to original_snippet_path(@reply_snippet.original_snippet)
-    else
-      redirect_to original_snippet_path(@reply_snippet.original_snippet)
-    end
+    render partial: 'layouts/reply_snippet', locals: {current_user: current_user, reply: @reply_snippet }
   end
 
 
