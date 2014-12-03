@@ -1,4 +1,4 @@
-<div class="reply-snip">
+<div class="reply-snip reply-<%= reply.id%> ">
   <div class="vote-btn">
 
     <%= render partial: 'original_snippets/vote_form', locals: { val: "1", snippet_id: reply.id, snippet_class: "ReplySnippet", div_class: "arrow-up" } %>
