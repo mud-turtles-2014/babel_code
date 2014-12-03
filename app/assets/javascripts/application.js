@@ -19,7 +19,11 @@ $(function() {
     // add edit display here
   })
 
-  $(".arrow").click(function() { 
+  $(".arrow-up").click(function() { 
+    $(this).children('form').submit();
+  });
+
+  $(".arrow-down").click(function() { 
     $(this).children('form').submit();
   });
 
