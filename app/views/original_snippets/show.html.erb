@@ -1,8 +1,17 @@
 <div class="create-snip">
   <div class="vote-btn">
-    <%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: 1 }, method: :post, :class => "button" %>
-      <p><%= @original_snippet.tally_votes %></p>
-      <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
+
+    <form action="/votes" method="POST" class="vote">
+      <input type="hidden" name="vote" value="1">
+      <input type="hidden" name="votable_id" value= "<%= @original_snippet.id %>" >
+      <input type="hidden" name="votable_type" value="OriginalSnippet">
+      <input type="submit" value="Up">
+    </form>
+
+    <p><%= @original_snippet.tally_votes %></p>
+
+
+    <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
   </div>
 
   <h1><div class="fun-box"></div>
