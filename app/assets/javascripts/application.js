@@ -19,6 +19,10 @@ $(function() {
     // add edit display here
   })
 
+  $(".arrow").click(function() { 
+    $(this).children('form').submit();
+  });
+
   $(".vote").submit(function(event) {
     event.preventDefault();
     var data = $(event.target).serialize();
