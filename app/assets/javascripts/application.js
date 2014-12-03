@@ -22,14 +22,14 @@ $(function() {
   $(".vote").submit(function(event) {
     event.preventDefault();
     var data = $(event.target).serialize();
-    debugger;
     $.ajax({
       type: "POST",
       url: "/votes",
       data: data,
       dataType: "json"
     }).done(function(response) {
-      debugger;
+      var div = response.snippet_class + "-" +response.snippet_id + "-" + "votes";
+      $('#' + div).html('<p>' + response.vote_count + '</p>');
     });
   });
 
