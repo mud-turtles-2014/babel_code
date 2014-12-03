@@ -50,6 +50,10 @@ $(function() {
       data: data
     }).done(function(response) {
       $("#all-replies-div").append(response);
+    }).success(function() { 
+      console.log("sucesss");
+      $('.create-reply').hide();
+      $('#reply-msg').html('<p>Your reply has been posted</p>');
     });
   });
 
