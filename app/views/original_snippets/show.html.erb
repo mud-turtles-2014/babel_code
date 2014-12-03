@@ -8,7 +8,8 @@
       <input type="submit" value="Up">
     </form>
 
-    <p><%= @original_snippet.tally_votes %></p>
+
+    <%= render partial: 'vote_count', locals: {vote_count: @original_snippet.tally_votes } %>
 
 
     <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: @original_snippet.id, votable_type: "OriginalSnippet", vote: -1 }, method: :post, :class => "button" %>
