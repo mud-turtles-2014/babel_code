@@ -19,6 +19,20 @@ $(function() {
     // add edit display here
   })
 
+  $(".vote").submit(function(event) {
+    event.preventDefault();
+    var data = $(event.target).serialize();
+    debugger;
+    $.ajax({
+      type: "POST",
+      url: "/votes",
+      data: data,
+      dataType: "json"
+    }).done(function(response) {
+      debugger;
+    });
+  });
+
   $('#new_reply_snippet').submit(function(event) {
     event.preventDefault();
     var data = $(event.target).serialize();
