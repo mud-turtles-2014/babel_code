@@ -1,8 +1,12 @@
 <div class="reply-snip">
   <div class="vote-btn">
-    <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
-    <p><%= reply.tally_votes %></p>
-    <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
+
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "1", snippet_id: reply.id, snippet_class: "ReplySnippet", direction: "Up" } %>
+
+    <%= render partial: 'original_snippets/vote_count', locals: {vote_count: reply.tally_votes, id: reply.id.to_s, class_name: "ReplySnippet" } %>
+
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "-1", snippet_id: reply.id, snippet_class: "ReplySnippet", direction: "Down" } %>
+
   <br>
   </div>
 
