@@ -19,6 +19,18 @@ $(function() {
     // add edit display here
   })
 
+  $('#new_reply_snippet').submit(function(event) {
+    event.preventDefault();
+    var data = $(event.target).serialize();
+    $.ajax({
+      type: "POST",
+      url: "/reply_snippets",
+      data: data
+    }).done(function(response) {
+      $("#all-replies-div").append(response);
+    });
+  });
+
   $('.ruby-posts').hide();
   $('.javascript-posts').hide();
   $('.ruby-button').click(function(){

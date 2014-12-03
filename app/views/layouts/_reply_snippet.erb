@@ -1,0 +1,15 @@
+<div class="reply-snip">
+  <div class="vote-btn">
+    <br><%= button_to "Up", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: 1 }, method: :post, :class => "button" %>
+    <p><%= reply.tally_votes %></p>
+    <%= button_to "Down", { :controller => 'votes', action: 'create', votable_id: reply.id, votable_type: "ReplySnippet", vote: -1 }, method: :post, :class => "button" %><br>
+  <br>
+  </div>
+
+    <div class="fun-box"></div><%= reply.description %>
+    <pre><code><%= reply.snippet %></code></pre>
+    <p>Language: <%= reply.language.language %></p>
+    <% if reply.user == current_user %>
+      <%= button_to "Delete", reply_snippet_path(reply), method: :delete, action: 'destroy', :class => "button"%>
+    <% end %>
+</div>
