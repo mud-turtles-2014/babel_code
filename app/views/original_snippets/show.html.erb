@@ -1,11 +1,10 @@
 <div class="create-snip">
   <div class="vote-btn">
-
-    <%= render partial: 'vote_form', locals: { val: "1", snippet_id: @original_snippet.id, snippet_class: "OriginalSnippet", direction: "Up" } %>
+    <%= render partial: 'vote_form', locals: { val: "1", snippet_id: @original_snippet.id, snippet_class: "OriginalSnippet", div_class: "arrow-up" } %>
 
     <%= render partial: 'vote_count', locals: {vote_count: @original_snippet.tally_votes, id: @original_snippet.id.to_s, class_name: "OriginalSnippet" } %>
 
-    <%= render partial: 'vote_form', locals: { val: "-1", snippet_id: @original_snippet.id, snippet_class: "OriginalSnippet", direction: "Down" } %>
+    <%= render partial: 'vote_form', locals: { val: "-1", snippet_id: @original_snippet.id, snippet_class: "OriginalSnippet", div_class: "arrow-down" } %>
 
   </div>
 

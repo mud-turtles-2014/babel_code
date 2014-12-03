@@ -1,11 +1,10 @@
 <div class="reply-snip">
   <div class="vote-btn">
 
-    <%= render partial: 'original_snippets/vote_form', locals: { val: "1", snippet_id: reply.id, snippet_class: "ReplySnippet", direction: "Up" } %>
-
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "1", snippet_id: reply.id, snippet_class: "ReplySnippet", div_class: "arrow-up" } %>
     <%= render partial: 'original_snippets/vote_count', locals: {vote_count: reply.tally_votes, id: reply.id.to_s, class_name: "ReplySnippet" } %>
 
-    <%= render partial: 'original_snippets/vote_form', locals: { val: "-1", snippet_id: reply.id, snippet_class: "ReplySnippet", direction: "Down" } %>
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "-1", snippet_id: reply.id, snippet_class: "ReplySnippet", div_class: "arrow-down" } %>
 
   <br>
   </div>
