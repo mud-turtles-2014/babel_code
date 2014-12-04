@@ -21,7 +21,8 @@
 
 
 
-Click <button class="button", id="create-reply-btn">reply</button> to this code snippet<br>
+<p>Click <button class="button", id="create-reply-btn">reply</button> to this code snippet</p><br>
+<div id="reply-msg"></div>
 <div class="create-reply">
   <%= form_for(@reply_snippet, remote: true) do |f| %>
   <div class="orig-snip"><ul>
@@ -38,7 +39,7 @@ Click <button class="button", id="create-reply-btn">reply</button> to this code 
 </div><br>
 
 
-Scroll down to view replies<br>
+<p>Scroll down to view replies</p><br>
 
 <div id="all-replies-div">
 <% @reply_snippets.each do |reply| %>

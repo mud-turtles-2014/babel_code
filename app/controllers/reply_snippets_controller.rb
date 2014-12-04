@@ -9,7 +9,11 @@ class ReplySnippetsController < ApplicationController
 
   def destroy
     ReplySnippet.find(params[:id]).destroy
-    redirect_to :back
+    res = { reply_id: params[:id] }
+    respond_to do |format|
+      format.json { render json: res }
+      format.html { redirect_to :back }
+    end
   end
 
   private
