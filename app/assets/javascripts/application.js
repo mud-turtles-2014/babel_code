@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 
 $(function() {
   $('.edit_reply').click(function() {
@@ -58,6 +57,7 @@ $(function() {
 
   $('#new_reply_snippet').submit(function(event) {
     event.preventDefault();
+    event.stopPropagation();
     var data = $(event.target).serialize();
     $.ajax({
       type: "POST",
