@@ -27,7 +27,6 @@ $(function() {
   });
 
   $(".vote").submit(function(event) {
-    event.stopPropagation();
     event.preventDefault();
     var data = $(event.target).serialize();
     $.ajax({
