@@ -9,13 +9,7 @@
   <div class="recent-posts home-snip-container">
     <h2>Recent Posts</h2>
     <% @recent.each do |original_snippet| %>
-      <div class = "home-snippet-box">
-        <h4><%= link_to original_snippet.title, original_snippet%></h4>
-        <% if original_snippet.description != "" %>
-          <p><%= original_snippet.description %></p>
-        <% end %>
-        <p>By <%= original_snippet.user.username %> &mdash; <%= original_snippet.created_at.strftime("%B %d, %Y") %></p>
-      </div>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
   </div>
 
