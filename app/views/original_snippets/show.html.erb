@@ -20,24 +20,26 @@
 </div><br><br><br>
 
 
-
-<p>Click <button class="button", id="create-reply-btn">reply</button> to this code snippet</p><br>
-<div id="reply-msg"></div>
-<div class="create-reply">
-  <%= form_for(@reply_snippet, remote: true) do |f| %>
-  <div class="orig-snip"><ul>
-    <li>Description:<br>
-    <%= f.text_area :description %></li><br>
-    <li>Code Snippet:<br>
-    <%= f.text_area :snippet %><br>
-    <li>Language:<br>
-    <%= f.collection_select :language_id, Language.order(:language), :id, :language, :class=>"button"%></li></ul>
-    <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
-    <%= f.submit "Reply", :class => "reply-button" %>
-    </div>
-  <% end %>
-</div><br>
-
+<% if @current_user %>
+  <p>Click <button class="button", id="create-reply-btn">reply</button> to this code snippet</p><br>
+  <div id="reply-msg"></div>
+  <div class="create-reply">
+    <%= form_for(@reply_snippet, remote: true) do |f| %>
+    <div class="orig-snip"><ul>
+      <li>Description:<br>
+      <%= f.text_area :description %></li><br>
+      <li>Code Snippet:<br>
+      <%= f.text_area :snippet %><br>
+      <li>Language:<br>
+      <%= f.collection_select :language_id, Language.order(:language), :id, :language, :class=>"button"%></li></ul>
+      <%= f.hidden_field :original_snippet_id, value: @original_snippet.id %>
+      <%= f.submit "Reply", :class => "reply-button" %>
+      </div>
+    <% end %>
+  </div><br>
+<% else %>
+  <p><a href="/login"><button class="button">Login</button></a> to reply to this code snippet</p><br>
+<% end %>
 
 <p>Scroll down to view replies</p><br>
 
