@@ -210,31 +210,14 @@ a:hover {
  	width: 52px;
 }
 
-.recent-button{
+.language-btn {
 	border-radius: 20px;
 	font-size: 1em;
 	color: white;
 	padding-left: 15px;
 	padding-right: 15px;
 	background-color: #7B7F7F;
-}
-
-.javascript-button{
-	border-radius: 20px;
-	font-size: 1em;
-	color: white;
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #7B7F7F;
-}
-
-.ruby-button{
-	border-radius: 20px;
-	font-size: 1em;
-	color: white;
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #7B7F7F;
+	cursor: pointer;
 }
 
 .create-reply {

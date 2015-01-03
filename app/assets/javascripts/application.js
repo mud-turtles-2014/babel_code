@@ -18,11 +18,11 @@ $(function() {
     // add edit display here
   })
 
-  $(".arrow-up").click(function() { 
+  $(".arrow-up").click(function() {
     $(this).children('form').submit();
   });
 
-  $(".arrow-down").click(function() { 
+  $(".arrow-down").click(function() {
     $(this).children('form').submit();
   });
 
@@ -65,7 +65,7 @@ $(function() {
       data: data
     }).done(function(response) {
       $("#all-replies-div").append(response);
-    }).success(function() { 
+    }).success(function() {
       $('#reply_snippet_description').val('')
       $('#reply_snippet_snippet').val('')
       $('.create-reply').hide();
@@ -73,24 +73,23 @@ $(function() {
     });
   });
 
-  $('.ruby-posts').hide();
-  $('.javascript-posts').hide();
-  $('.ruby-button').click(function(){
-    $('.ruby-posts').show();
-    $('.javascript-posts').hide();
-    $('.recent-posts').hide();
-  });
-  $('.javascript-button').click(function(){
-    $('.javascript-posts').show();
-    $('.recent-posts').hide();
-    $('.ruby-posts').hide();
-  });
-  $('.recent-button').click(function(){
-    $('.recent-posts').show();
-    $('.javascript-posts').hide();
-    $('.ruby-posts').hide();
+  var languages = ["recent", "ruby", "javascript", "java", "python"];
+
+  showPosts("recent");
+
+  $('.language-btn').click(function() {
+    var language = $(this).attr("id");
+    showPosts(language);
   });
 
+  function showPosts(language) {
+    for(var i = 0; i < languages.length; ++i) {
+      var divClass = '.' + languages[i] + '-posts';
+      $(divClass).hide();
+    }
+    var divClass = '.' + language + '-posts';
+    $(divClass).show();
+  }
 
   function hideShow(buttonID, showItem){
   $(showItem).hide();
