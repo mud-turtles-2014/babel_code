@@ -32,11 +32,18 @@
     </ul>
   </div>
 
-  <div class="java-posts">
+  <div class="java-posts home-snip-container">
     <h2>Java Posts</h2>
+    <% @java_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
+    <% end %>
   </div>
 
-  <div class="python-posts">
+  <div class="python-posts home-snip-container">
     <h2>Python Posts</h2>
+    <% @python_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
+    <% end %>
   </div>
+
 </div>
