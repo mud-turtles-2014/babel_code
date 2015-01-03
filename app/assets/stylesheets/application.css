@@ -92,6 +92,7 @@ p {
 	height: auto;
 	padding: 4px;
 	margin: 4px;
+	cursor: pointer;
 }
 .reply-button{
 	background-color: #7B7F7F;
@@ -101,6 +102,7 @@ p {
 	color: #F5FFFF;
 	display: inline-block;
 	float:absolute;
+	cursor: pointer;
 }
 
 .welcome {
@@ -252,8 +254,8 @@ a:hover {
 	border-right: 25px solid transparent;
 	border-bottom: 25px solid black;
 
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	cursor: pointer;
 	margin-left: 5px;
 }
@@ -263,8 +265,8 @@ a:hover {
 	border-right: 25px solid transparent;
 	border-top: 25px solid black;
 
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	cursor: pointer;
 	margin-left: 5px;
 }
