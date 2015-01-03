@@ -92,6 +92,7 @@ p {
 	height: auto;
 	padding: 4px;
 	margin: 4px;
+	cursor: pointer;
 }
 .reply-button{
 	background-color: #7B7F7F;
@@ -101,6 +102,7 @@ p {
 	color: #F5FFFF;
 	display: inline-block;
 	float:absolute;
+	cursor: pointer;
 }
 
 .welcome {
