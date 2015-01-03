@@ -6,27 +6,24 @@
     <button class="javascript-button">JavaScript Posts</button>
   </ul>
 
-  <div class="recent-posts">
+  <div class="recent-posts home-snip-container">
     <h2>Recent Posts</h2>
-    <ul><% @recent.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @recent.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
 
-  <div class="ruby-posts">
+  <div class="ruby-posts home-snip-container">
     <h2>Ruby Posts</h2>
-    <ul><% @ruby_entries.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @ruby_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
 
-  <div class="javascript-posts">
+  <div class="javascript-posts home-snip-container">
     <h2>JavaScript Posts</h2>
-    <ul><% @js_entries.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @js_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
 </div>

@@ -252,8 +252,8 @@ a:hover {
 	border-right: 25px solid transparent;
 	border-bottom: 25px solid black;
 
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	cursor: pointer;
 	margin-left: 5px;
 }
@@ -263,8 +263,24 @@ a:hover {
 	border-right: 25px solid transparent;
 	border-top: 25px solid black;
 
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	cursor: pointer;
 	margin-left: 5px;
+}
+
+.home-snip-container {
+	max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.home-snippet-box {
+	border-bottom: 1px solid rgba(228, 229, 233, 0.96);
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.home-snippet-box p {
+	padding: 0px;
 }
