@@ -13,9 +13,9 @@
     <p><%= @original_snippet.description %></p>
     <pre><%= @original_snippet.snippet %></pre>
     <p>Language: <%= @original_snippet.language.language %></p>
-    <% if @original_snippet.user == @current_user %>
-      <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
-      <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
+    <% if @original_snippet.user == @current_user || @current_user.is_admin? %>
+    <%= button_to "Delete", @original_snippet, method: :delete, action: 'destroy' , :class => "button"%>
+    <%= button_to "Edit", edit_original_snippet_path(@original_snippet), method: :get, :class => "button" %>
     <% end %>
 </div><br><br><br>
 

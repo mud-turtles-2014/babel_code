@@ -12,8 +12,7 @@
     <div class="fun-box"></div><%= reply.description %>
     <pre><code><%= reply.snippet %></code></pre>
     <p>Language: <%= reply.language.language %></p>
-    <% if reply.user == current_user %>
-      
+    <% if reply.user == current_user || current_user.is_admin? %>
       <%= button_to "Delete", reply, method: :delete, action: 'destroy' , :class => "button delete-reply" %>
     <% end %>
 </div>

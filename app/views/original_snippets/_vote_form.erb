@@ -1,5 +1,5 @@
-  <div class=<%= div_class %> >
-    <% if @current_user %>
+<div class=<%= div_class %> >
+  <% if @current_user %>
   	<form action="/votes" method="POST" class="vote">
   	  <input type="hidden" name="vote" value=<%= val %>>
   	  <input type="hidden" name="votable_id" value= "<%= snippet_id %>" >
