@@ -1,0 +1,18 @@
+<div class="reply-snip reply-<%= reply.id%> ">
+  <div class="vote-btn">
+
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "1", snippet_id: reply.id, snippet_class: "ReplySnippet", div_class: "arrow-up" } %>
+    <%= render partial: 'original_snippets/vote_count', locals: {vote_count: reply.tally_votes, id: reply.id.to_s, class_name: "ReplySnippet" } %>
+
+    <%= render partial: 'original_snippets/vote_form', locals: { val: "-1", snippet_id: reply.id, snippet_class: "ReplySnippet", div_class: "arrow-down" } %>
+
+  <br>
+  </div>
+
+    <div class="fun-box"></div><%= reply.description %>
+    <pre><code><%= reply.snippet %></code></pre>
+    <p>Language: <%= reply.language.language %></p>
+    <% if reply.user == current_user || current_user.is_admin? %>
+      <%= button_to "Delete", reply, method: :delete, action: 'destroy' , :class => "button delete-reply" %>
+    <% end %>
+</div>

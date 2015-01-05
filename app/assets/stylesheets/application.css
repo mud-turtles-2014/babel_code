@@ -92,6 +92,7 @@ p {
 	height: auto;
 	padding: 4px;
 	margin: 4px;
+	cursor: pointer;
 }
 .reply-button{
 	background-color: #7B7F7F;
@@ -101,10 +102,9 @@ p {
 	color: #F5FFFF;
 	display: inline-block;
 	float:absolute;
+	cursor: pointer;
 }
-.button:hover {
-	background-color:
-}
+
 .welcome {
 	margin: 70px;
 	padding-left: 25px;
@@ -122,8 +122,8 @@ p {
 }
 .welcome p {
 	padding:28px;
-	padding-left: 25px
-	padding-right: 15px
+	padding-left: 25px;
+	padding-right: 15px;
 }
 .create-snip{
 	width: 85%;
@@ -143,7 +143,7 @@ textarea {
 	margin-left: 20px;
 	border-color: #7B7F7F;
 	width: 750px;
-	height: 200px;
+	height: 150px;
 }
 .reply-snip {
 	background-color: #A0A5A5;
@@ -210,31 +210,14 @@ a:hover {
  	width: 52px;
 }
 
-.recent-button{
+.language-btn {
 	border-radius: 20px;
 	font-size: 1em;
 	color: white;
 	padding-left: 15px;
 	padding-right: 15px;
 	background-color: #7B7F7F;
-}
-
-.javascript-button{
-	border-radius: 20px;
-	font-size: 1em;
-	color: white;
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #7B7F7F;
-}
-
-.ruby-button{
-	border-radius: 20px;
-	font-size: 1em;
-	color: white;
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #7B7F7F;
+	cursor: pointer;
 }
 
 .create-reply {
@@ -247,4 +230,42 @@ a:hover {
 }
 .button:hover {
 	background-color: black;
+}
+
+.arrow-up {
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 25px solid black;
+
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.arrow-down {
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 25px solid black;
+
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.home-snip-container {
+	max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.home-snippet-box {
+	border-bottom: 1px solid rgba(228, 229, 233, 0.96);
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.home-snippet-box p {
+	padding: 0px;
 }

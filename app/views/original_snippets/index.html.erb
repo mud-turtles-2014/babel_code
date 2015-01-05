@@ -1,32 +1,46 @@
 <div class="tab-box">
 
   <ul class="tab-nav">
-    <button class ="recent-button">Recent Posts</button>
-    <button class="ruby-button">Ruby Posts</button>
-    <button class="javascript-button">JavaScript Posts</button>
+    <button class ="language-btn" id="recent">Recent Posts</button>
+    <button class="language-btn" id="ruby">Ruby Posts</button>
+    <button class="button language-btn" id="javascript">JavaScript Posts</button>
+    <button class="language-btn" id="java">Java Posts</button>
+    <button class="language-btn" id="python">Python Posts</button>
   </ul>
 
-  <div class="recent-posts">
+  <div class="recent-posts home-snip-container">
     <h2>Recent Posts</h2>
-    <ul><% @recent.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @recent.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
 
-  <div class="ruby-posts">
+  <div class="ruby-posts home-snip-container">
     <h2>Ruby Posts</h2>
-    <ul><% @ruby_entries.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @ruby_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
 
-  <div class="javascript-posts">
+  <div class="javascript-posts home-snip-container">
     <h2>JavaScript Posts</h2>
-    <ul><% @js_entries.each do |original_snippet| %>
-      <li><%= link_to original_snippet.title, original_snippet%></li>
+    <% @js_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
     <% end %>
-    </ul>
   </div>
+
+  <div class="java-posts home-snip-container">
+    <h2>Java Posts</h2>
+    <% @java_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
+    <% end %>
+  </div>
+
+  <div class="python-posts home-snip-container">
+    <h2>Python Posts</h2>
+    <% @python_entries.each do |original_snippet| %>
+      <%= render partial: 'snippet', locals: {original_snippet: original_snippet } %>
+    <% end %>
+  </div>
+
 </div>

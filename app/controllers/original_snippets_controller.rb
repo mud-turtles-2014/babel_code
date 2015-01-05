@@ -5,6 +5,8 @@ class OriginalSnippetsController < ApplicationController
     @recent = OriginalSnippet.all.order("created_at desc")
     @ruby_entries = OriginalSnippet.all.where(language_id: 1).order("created_at desc")
     @js_entries = OriginalSnippet.all.where(language_id: 2).order("created_at desc")
+    @java_entries = OriginalSnippet.all.where(language_id: 3).order("created_at desc")
+    @python_entries = OriginalSnippet.all.where(language_id: 4).order("created_at desc")
   end
 
   def new
