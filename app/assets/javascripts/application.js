@@ -14,10 +14,6 @@
 //= require jquery_ujs
 
 $(function() {
-  $('.edit_reply').click(function() {
-    // add edit display here
-  })
-
   $(".arrow-up").click(function() {
     $(this).children('form').submit();
   });
@@ -98,8 +94,7 @@ $(function() {
       });
     })
   }
-  // hideShow($('#login-btn'),$('#login-div'));
-  // hideShow($('#signup-btn'),$('#signup-div'));
+
   hideShow($('#create-reply-btn'),$('.create-reply'));
   $('#signup-div').hide();
   $('#signup-btn').click(function() {
